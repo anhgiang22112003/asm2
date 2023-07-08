@@ -24,7 +24,9 @@ import { AdminProduct } from './pages/admin/dasbroad.tsx/dasbroad'
 
 function App ()
 {
-  // const user = JSON.parse( sessionStorage.getItem( "Giang" )! )
+  const user = JSON.parse( sessionStorage.getItem( "user" )! )
+  console.log( user?.role );
+
   const [ product, setProduct ] = useState<IProduct[]>( [] )
   useEffect( () =>
   {
@@ -40,7 +42,7 @@ function App ()
         <Route path='/giohang' element={ <GioHang /> } ></Route>
       </Route>
 
-      <Route path='/admin' element={ <BaseAdmin /> } >
+      <Route path='/admin' element={ user?.role === 'Admin' ? ( <BaseAdmin /> ) : ( <ErrorPage /> ) } >
         <Route index element={ <AdminProduct /> } />
         <Route path='admin/dashboard' element={ <BaseAdmin /> } />
         <Route path='add' element={ <Add /> } />

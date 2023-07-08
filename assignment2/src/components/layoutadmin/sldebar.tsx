@@ -13,7 +13,7 @@ function getItem ( label: React.ReactNode, key: React.Key, icon?: React.ReactNod
 
 const items: MenuItem[] = [
     getItem( 'Dashboard', '1', <NavLink to="/admin"></NavLink> ),
-    getItem( 'Product', '2', <NavLink to="/admin/product"></NavLink> ),
+    getItem( 'Product', '2', <NavLink to="add"></NavLink> ),
     getItem( 'User', '3', <NavLink to="/admin/user"></NavLink> )
 ];
 

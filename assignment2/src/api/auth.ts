@@ -15,7 +15,7 @@ export const singin = async ( data: SinginForm ) =>
         if ( response.status === 200 )
         {
             sessionStorage.setItem( 'token', response.data.accessToken );
-            sessionStorage.setItem( 'user', response.data.user.name );
+            sessionStorage.setItem( 'user', JSON.stringify( response.data.user ) );
             return true;
         }
     } catch ( error: any )

@@ -32,7 +32,7 @@ export const HeaderClient = () =>
         {
             key: '3',
             label: (
-                <a target="_blank" href="/admin">
+                <a href="/admin">
                     Admin
                 </a>
             ),

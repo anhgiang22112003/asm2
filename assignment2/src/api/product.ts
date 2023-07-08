@@ -19,7 +19,11 @@ export const update = ( _id: string, body: updateForm ) =>
 
 export const deleteProduct = async ( _id: string ) =>
 {
-    const res = await instance.delete( `http://localhost:8080//product/` + _id )
+    await instance.delete( `/product/${ _id }`, {
+        headers: {
+            Authorization: "Bearer " + sessionStorage.getItem( 'token' )
+        }
+    } )
 }
 export const add = ( body: updateForm ) =>
 {
